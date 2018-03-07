@@ -10,6 +10,7 @@ def confdir
 end
 
 def write_config(config)
+  FileUtils.mkdir_p(confdir) unless File.directory?(confdir)
   File.open(File.join(confdir, 'extended_http.yaml'), 'w+') do |f|
     f.write({ 'endpoints' => config }.to_yaml)
   end

@@ -97,8 +97,8 @@ describe processor do
       it 'posts to both endpoints' do
         write_config(config)
         Puppet::Network::HttpPool.expects(:http_instance).at_least(2).returns(connection)
-        connection.expects(:post).with('/upload', anything, has_entry("Content-Type" => "application/json"), options).returns(httpok)
-        connection.expects(:post).with('/reports', anything, has_entry("Content-Type" => "application/x-yaml"), options).returns(httpok)
+        connection.expects(:post).with('/upload', subject.to_json, has_entry("Content-Type" => "application/json"), options).returns(httpok)
+        connection.expects(:post).with('/reports', subject.to_yaml, has_entry("Content-Type" => "application/x-yaml"), options).returns(httpok)
         subject.process
       end
     end
