@@ -1,13 +1,14 @@
 class extended_http_report_processor (
   Extended_http_report_processor::Endpoints $endpoints,
-  Stdlib::Absolutepath                      $config        = "${settings['confdir']}/extended_http.yaml",
-  Stdlib::Absolutepath                      $puppet_config = $settings['config'],
+  Stdlib::Absolutepath                      $config        = "${settings::confdir}/extended_http.yaml",
+  Stdlib::Absolutepath                      $puppet_config = $settings::config,
   Boolean                                   $enable        = true,
 ) {
 
-  file { $config:
+  file { 'extended_http_report_processor_config':
+    path    => $config,
     ensure  => present,
-    content => 'inline_template(<%= { "endpoints" => @endpoints }.to_yaml %>)',
+    content => inline_template('<%= { "endpoints" => @endpoints }.to_yaml %>'),
   }
 
   if $enable {
@@ -17,7 +18,7 @@ class extended_http_report_processor (
       section              => 'main',
       setting              => 'reports',
       subsetting           => 'extended_http',
-      subsetting_separator => ','
+      subsetting_separator => ',',
       require              => File[$config]
     }
 

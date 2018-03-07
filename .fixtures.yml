@@ -2,3 +2,6 @@
   fixtures:
     symlinks:
       extended_http_report_processor: "#{source_dir}"
+    repositories:
+      inifile: 'https://github.com/puppetlabs/puppetlabs-inifile.git'
+      stdlib: 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
