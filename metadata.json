@@ -1,0 +1,29 @@
+{
+    "name": "puppet-extended_http_report_processor",
+    "version": "1.0.0",
+    "author": "David Danzilio",
+    "summary": "A report processor that allows more control than the standard http processor.",
+    "license": "Apache-2.0",
+    "source": "https://github.com/danzilio/puppet-extended_http_report_processor",
+    "project_page": "https://github.com/danzilio/puppet-extended_http_report_processor",
+    "issues_url": "https://github.com/danzilio/puppet-extended_http_report_processor/issues",
+    "tags": [
+      "reports"
+    ],
+    "requirements": [
+      {
+        "name": "puppet",
+        "version_requirement": ">= 4.4.0 < 6.0.0"
+      }
+    ],
+    "dependencies": [
+      {
+        "name": "puppetlabs/stdlib",
+        "version_requirement": ">= 4.13.1 < 5.0.0"
+      },
+      {
+        "name": "puppetlabs/inifile",
+        "version_requirement": ">= 2.0.0 < 3.0.0"
+      }
+    ]
+  }
