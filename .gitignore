@@ -1,3 +1,4 @@
+spec/fixtures/etc/puppetlabs/puppet/extended_http.yaml
 *.gem
 *.rbc
 /.config
