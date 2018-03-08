@@ -43,7 +43,7 @@ class extended_http_report_processor (
     ini_subsetting { 'puppet.conf/reports/extended_http':
       ensure               => present,
       path                 => $puppet_config,
-      section              => 'main',
+      section              => 'master',
       setting              => 'reports',
       subsetting           => 'extended_http',
       subsetting_separator => ',',
@@ -53,7 +53,7 @@ class extended_http_report_processor (
     ini_setting { 'puppet.conf/report/true':
       ensure  => present,
       path    => $puppet_config,
-      section => 'main',
+      section => 'master',
       setting => 'report',
       value   => 'true', # lint:ignore:quoted_booleans
       require => Ini_subsetting['puppet.conf/reports/extended_http']

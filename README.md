@@ -22,7 +22,7 @@ Here's an example snippet from `puppet.conf`. You'll need to set the `report` an
 
 ```ini
 # /etc/puppetlabs/puppet/puppet.conf
-[main]
+[master]
 report = true
 reports = store, extended_http
 ```
